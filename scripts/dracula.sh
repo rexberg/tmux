@@ -38,6 +38,7 @@ main() {
   time_format=$(get_tmux_option "@dracula-time-format" "")
   show_ssh_session_port=$(get_tmux_option "@dracula-show-ssh-session-port" false)
   show_libreview=$(get_tmux_option "@dracula-show-libreview" false)
+  show_vault_token=$(get_tmux_option "@dracula-vault-token" "")
   show_empty_plugins=$(get_tmux_option "@dracula-show-empty-plugins" true)
   left_pad=$(get_tmux_option "@dracula-left-pad" " ")
   right_pad=$(get_tmux_option "@dracula-right-pad" " ")
@@ -291,6 +292,10 @@ main() {
     elif [ $plugin = "spotify-tui" ]; then
       IFS=' ' read -r -a colors <<<$(get_tmux_option "@dracula-spotify-tui-colors" "green dark_gray")
       script="#($current_dir/spotify-tui.sh)"
+
+    elif [ $plugin = "vault-token" ]; then
+      IFS=' ' read -r -a colors <<<$(get_tmux_option "@dracula-vault-token-colors" "orange dark_gray")
+      script="#($current_dir/vault_token.sh $show_vault_token)"
 
     elif [ $plugin = "krbtgt" ]; then
       IFS=' ' read -r -a colors <<<$(get_tmux_option "@dracula-krbtgt-colors" "cyan dark_gray")

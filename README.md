@@ -50,6 +50,7 @@ In depth configuration of Colors and alternative themes can be found [in the doc
 - Current working directory of tmux pane
 - Kerberos TGT expiration date
 - Show your Libre Freestyle 3 readings [Setup instructions](./scripts/libre.sh)
+- Show a HashiCorp Vault token TTL
 
 ## Compatibility
 
